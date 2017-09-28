@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="good">Good</string>
+    <string name="bad">Bad</string>
+    <string name="login">Login</string>
+    <string name="ok">valid?</string>
+    <string name="validate">validate</string>
+    <string name="reset">reset</string>
+    <string name="submit">Submit</string>
+    <string name="correct_username_password">Good user and password.</string>
+    <string name="incorrect_username_password">BAD user and password.</string>
+    <string name="date">Date</string>
+    <string-array name="dates">
+        <item>12/10/75</item>
+        <item>01/03/99</item>
+        <item>9/20/17</item>
+        <item>11/23/18</item>
+    </string-array>
+    <string name="dateChosen">You selected:</string>
+</resources>
