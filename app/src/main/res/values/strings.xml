@@ -18,5 +18,8 @@
         <item>9/20/17</item>
         <item>11/23/18</item>
     </string-array>
+    <string name="EnglishLanguage">English</string>
+    <string name="SpanishLanguage">Spanish</string>
     <string name="dateChosen">You selected:</string>
+    <string name="membership">Sac City Member?</string>
 </resources>

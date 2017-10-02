@@ -59,6 +59,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void sendMessage(View v)
+    {
+        if(v.getId() == submitButton.getId())
+        {
+            username = e1.getText().toString();
+            password = e3.getText().toString();
+
+            if (isMatch(defaultUsername + defaultPassword, username + password))
+            {
+                //Notify user of correct password.
+                msg(getString(R.string.correct_username_password));
+
+                //Start GatherMoreInfo activity.
+                intent = new Intent(MainActivity.this, GatherMoreInfo.class);
+
+                intent.putExtra("username", username);
+
+
+                startActivity(intent);
+
+            }
+            else
+            {
+                //Notify user of bad password.
+                msg(getString(R.string.incorrect_username_password));
+            }
+        }
+
+    }
+
+
+
     //Show/hide "valid? password"
     private void toggleValidPassword(int x)
     {
@@ -148,28 +180,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                username = e1.getText().toString();
-                password = e3.getText().toString();
-
-                if(isMatch(defaultUsername+defaultPassword,username+password))
-                {
-                    //Notify user of correct password.
-                    msg(getString(R.string.correct_username_password));
-
-                    //Start GatherMoreInfo activity.
-                    intent = new Intent(MainActivity.this, GatherMoreInfo.class);
-
-                    intent.putExtra("username",username);
-
-
-                    startActivity(intent);
-
-                }
-                else
-                {
-                    //Notify user of bad password.
-                    msg(getString(R.string.incorrect_username_password));
-                }
             }
 
         });
