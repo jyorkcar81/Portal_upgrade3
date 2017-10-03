@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -15,14 +15,14 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rbEng"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/EnglishLanguage" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rbSpan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,7 +38,10 @@
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/memberships"/>
+
+
     </LinearLayout>
 
 </LinearLayout>
