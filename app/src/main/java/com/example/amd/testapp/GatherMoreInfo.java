@@ -3,12 +3,14 @@ package com.example.amd.testapp;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.widget.ArrayAdapter;
 import android.widget.*;
 import android.view.View;
 import android.content.Intent;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import java.util.Locale;
 
@@ -16,7 +18,7 @@ import java.util.Locale;
  * Created by buscis-c2-l3 on 9/18/2017.
  */
 
-public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnItemSelectedListener, OnCheckedChangeListener
 {
     private ArrayAdapter<CharSequence> adapter;
 
@@ -54,7 +56,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         sp.setOnItemSelectedListener(this);
 
-        username.setText(getIntent().getStringExtra("username"));
+        username.setText(getIntent().getStringExtra(MainActivity.PACKAGE_NAME));
     }
 
     @Override
@@ -68,25 +70,6 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         //Do nothing.
     }
 
-    public void doSomething()
-    {
-        if(rbEng.isChecked())
-        {
-            //Set language to English.
-            selectedLanguage = ENGLISH;
-        }
-        else if(rbSpan.isChecked())
-        {
-            //Set language to Spanish.
-            selectedLanguage = SPANISH;
-        }
-        else
-        {
-           //Default: leave language setting as-is on device.
-        }
-
-        changeLanguage(selectedLanguage);
-    }
 
     private void changeLanguage(String lang)
     {
@@ -100,11 +83,40 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     /*Intent refresh = new Intent(this, AndroidLocalize.class);
     startActivity(refresh);*/
     }
-        @Override
-        public void onConfigurationChanged(Configuration newConfig) {
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
         // refresh your views here
         //lblLang.setText(R.string.langselection);
         super.onConfigurationChanged(newConfig);
     }
 
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+
+        radioGroup.getCheckedRadioButtonId();
+
+        if(rbEng.isChecked())
+        {
+            //Set language to English.
+            selectedLanguage = ENGLISH;
+        }
+        else if(rbSpan.isChecked())
+        {
+            //Set language to Spanish.
+            selectedLanguage = SPANISH;
+        }
+        else
+        {
+            //Default: leave language setting as-is on device.
+            selectedLanguage = Locale.getDefault().getDisplayLanguage();
+        }
+
+        changeLanguage(selectedLanguage);
+
+
+
+    }
 }

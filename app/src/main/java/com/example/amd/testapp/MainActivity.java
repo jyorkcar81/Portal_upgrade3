@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private int MIN_LENGTH;
     private int MAX_LENGTH;
 
+    public static final String PACKAGE_NAME="com.example.amd.testapp";
+
     private String  username,
                     password,
                     defaultUsername,        //used to show password EditText is working.
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 //Start GatherMoreInfo activity.
                 intent = new Intent(MainActivity.this, GatherMoreInfo.class);
 
-                intent.putExtra("username", username);
+                intent.putExtra(PACKAGE_NAME, username);
 
 
                 startActivity(intent);
