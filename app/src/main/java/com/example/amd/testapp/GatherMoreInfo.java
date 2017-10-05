@@ -35,6 +35,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
     private String selectedLanguage = "";
 
+    private Intent i;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -56,7 +58,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         sp.setOnItemSelectedListener(this);
 
-        username.setText(getIntent().getStringExtra(MainActivity.PACKAGE_NAME));
+        username.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
+
     }
 
     @Override

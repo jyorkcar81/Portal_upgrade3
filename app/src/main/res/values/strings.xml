@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">Portal</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="good">Good</string>
@@ -29,6 +29,8 @@
 
         <item>Student</item>
         <item>Faculty</item>
+        <item>Alumni</item>
+        <item>Future student</item>
         <item>Guest</item>
 
     </string-array>

@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View v)
     {
+        msg("id=="+v.getId());
+
         if(v.getId() == submitButton.getId())
         {
             username = e1.getText().toString();
@@ -74,10 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 msg(getString(R.string.correct_username_password));
 
                 //Start GatherMoreInfo activity.
-                intent = new Intent(MainActivity.this, GatherMoreInfo.class);
+                intent = new Intent(this, GatherMoreInfo.class);
 
                 intent.putExtra(PACKAGE_NAME, username);
-
 
                 startActivity(intent);
 
