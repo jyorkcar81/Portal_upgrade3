@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">Portal</string>
+    <string name="app_name">SCC CIS Mobile Design Class Portal</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="email">Email</string>
+    <string name="time">Time</string>
     <string name="good">Good</string>
     <string name="bad">Bad</string>
     <string name="login">Login</string>
@@ -13,6 +17,7 @@
     <string name="incorrect_username_password">BAD user and password.</string>
     <string name="date">Date</string>
     <string name="welcome">Welcome</string>
+    <string name="welcome_message">Welcome to CISP 362</string>
     <string-array name="dates">
         <item>12/10/75</item>
         <item>01/03/99</item>
