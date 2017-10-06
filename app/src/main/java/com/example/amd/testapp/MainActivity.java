@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View v)
     {
-        msg("id=="+v.getId());
-
         if(v.getId() == submitButton.getId())
         {
             username = e1.getText().toString();
@@ -178,14 +176,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view)
-            {
-            }
-
-        });
     }
 
     private boolean isValidPassword(String in)

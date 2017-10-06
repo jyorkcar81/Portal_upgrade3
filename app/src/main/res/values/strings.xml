@@ -12,6 +12,7 @@
     <string name="correct_username_password">Good user and password.</string>
     <string name="incorrect_username_password">BAD user and password.</string>
     <string name="date">Date</string>
+    <string name="welcome">Welcome</string>
     <string-array name="dates">
         <item>12/10/75</item>
         <item>01/03/99</item>

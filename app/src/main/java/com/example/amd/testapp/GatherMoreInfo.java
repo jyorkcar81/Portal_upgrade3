@@ -25,7 +25,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     private Spinner sp;
 
     private TextView    date,
-                        username;
+                        username,
+                        user;
 
     private RadioButton rbEng,
                         rbSpan;
@@ -48,7 +49,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         sp       = (Spinner)findViewById(R.id.spinner);
         rbEng    = (RadioButton)findViewById(R.id.rbEng);
         rbSpan   = (RadioButton)findViewById(R.id.rbSpan);
-
+        user     = (TextView)findViewById(R.id.user);
 
         adapter = ArrayAdapter.createFromResource(this,R.array.dates,R.layout.support_simple_spinner_dropdown_item);
 
@@ -58,8 +59,9 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         sp.setOnItemSelectedListener(this);
 
+        i = getIntent();
         username.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
-
+        user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
     }
 
     @Override
@@ -80,8 +82,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
-        conf.locale = myLocale;
-        res.updateConfiguration(conf, dm);
+//        conf.locale = myLocale;
+ //       res.updateConfiguration(conf, dm);
         onConfigurationChanged(conf);
     /*Intent refresh = new Intent(this, AndroidLocalize.class);
     startActivity(refresh);*/
