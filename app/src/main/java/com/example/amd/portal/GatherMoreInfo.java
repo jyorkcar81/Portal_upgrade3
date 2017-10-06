@@ -22,11 +22,14 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 {
     private ArrayAdapter<CharSequence> adapter;
 
-    private Spinner sp;
+    //private Spinner sp;
 
     private TextView    date,
-                        username,
                         user;
+
+    private EditText    name,
+                        address,
+                        email;
 
     private RadioButton rbEng,
                         rbSpan;
@@ -44,24 +47,27 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_info);
 
-        date     = (TextView)findViewById(R.id.dateLabelId);
-        username = (TextView)findViewById(R.id.textViewUsernameId);
-        sp       = (Spinner)findViewById(R.id.spinner);
+        date     = (TextView)findViewById(R.id.textViewDate);
+
+        //sp       = (Spinner)findViewById(R.id.spinner);
         rbEng    = (RadioButton)findViewById(R.id.rbEng);
         rbSpan   = (RadioButton)findViewById(R.id.rbSpan);
         user     = (TextView)findViewById(R.id.user);
+        name     = (EditText)findViewById(R.id.editTextName);
+        address  = (EditText)findViewById(R.id.editTextAddress);
+        email    = (EditText)findViewById(R.id.editTextEmail);
 
         adapter = ArrayAdapter.createFromResource(this,R.array.dates,R.layout.support_simple_spinner_dropdown_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        sp.setAdapter(adapter);
+        //sp.setAdapter(adapter);
 
-        sp.setOnItemSelectedListener(this);
+        //sp.setOnItemSelectedListener(this);
 
         i = getIntent();
-        username.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
         user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
+
     }
 
     @Override
