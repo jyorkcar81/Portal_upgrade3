@@ -1,4 +1,4 @@
-package com.example.amd.testapp;
+package com.example.amd.portal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

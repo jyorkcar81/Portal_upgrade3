@@ -1,4 +1,4 @@
-package com.example.amd.testapp;
+package com.example.amd.portal;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
