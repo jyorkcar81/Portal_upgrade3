@@ -34,6 +34,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     private RadioButton rbEng,
                         rbSpan;
 
+    private Intent intent;
+
     private static final String ENGLISH = Locale.ENGLISH.toString(); //English language locale.
     private static final String SPANISH = ""; //Spanish language locale.
 
@@ -129,5 +131,11 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
 
 
+    }
+
+    public void sendMessage(View v)
+    {
+        intent = new Intent(this, PersonalActivity.class);
+        startActivity(intent);
     }
 }
