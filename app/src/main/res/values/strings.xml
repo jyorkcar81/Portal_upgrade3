@@ -41,4 +41,9 @@
 
     </string-array>
 
+    <string name="category">Category</string>
+    <string name="game">Game</string>
+
+    <string name="bio">Computer Information Science from UC Irvine.  Developing apps out of hobby.</string>
+
 </resources>
