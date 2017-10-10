@@ -41,8 +41,10 @@
 
     </string-array>
 
-    <string name="category">Category</string>
+    <string name="category">Category:</string>
     <string name="game">Game</string>
+    <string name="myGitHubLink">https://github.com/jyorkcar81</string>
+    <string name="myGitHub">GitHub:</string>
 
     <string name="bio">Computer Information Science from UC Irvine.  Developing apps out of hobby.</string>
 
