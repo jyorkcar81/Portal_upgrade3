@@ -43,11 +43,18 @@
 
     </string-array>
 
+    <string name="picker">pick</string>
+
+
+
     <string name="category">Category:</string>
     <string name="game">Game</string>
     <string name="myGitHubLink">https://github.com/jyorkcar81</string>
     <string name="myGitHub">GitHub:</string>
 
     <string name="bio">Computer Information Science from UC Irvine.  Developing apps out of hobby.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

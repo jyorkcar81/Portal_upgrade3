@@ -19,9 +19,8 @@
         <activity
             android:name=".GatherMoreInfo"
             android:label="GatherMoreInfo"
-            android:parentActivityName="GatherMoreInfo"></activity>
-
-        <activity android:name=".PersonalActivity"></activity>
+            android:parentActivityName=".GatherMoreInfo" />
+        <activity android:name=".PersonalActivity" />
     </application>
 
 </manifest>

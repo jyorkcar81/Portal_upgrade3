@@ -13,7 +13,14 @@ import android.content.Intent;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.support.v4.app.DialogFragment;
+import android.widget.DatePicker;
+import android.app.Dialog;
+import android.widget.EditText;
+import android.text.format.DateFormat;
+import android.widget.TimePicker;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 /**
@@ -26,15 +33,19 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
     //private Spinner sp;
 
-    private TextView    date,
-                        user;
+    private TextView    user;
 
     private EditText    name,
                         address,
                         email;
 
+    private static EditText date,
+                            time;
+
     private RadioButton rbEng,
                         rbSpan;
+
+    private Button b;
 
     private Intent intent;
 
@@ -51,7 +62,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_info);
 
-        date     = (TextView)findViewById(R.id.textViewDate);
+        date     = (EditText) findViewById(R.id.editTextDate);
+        time     = (EditText) findViewById(R.id.editTextTime);
 
         //sp       = (Spinner)findViewById(R.id.spinner);
         rbEng    = (RadioButton)findViewById(R.id.rbEng);
@@ -60,6 +72,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         name     = (EditText)findViewById(R.id.editTextName);
         address  = (EditText)findViewById(R.id.editTextAddress);
         email    = (EditText)findViewById(R.id.editTextEmail);
+
+        b = (Button)findViewById(R.id.button4);
 
         adapter = ArrayAdapter.createFromResource(this,R.array.dates,R.layout.support_simple_spinner_dropdown_item);
 
@@ -135,9 +149,96 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
     }
 
+    public void showDatePickerDialog(View v)
+    {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+
+    }
+    public void showTimePickerDialog(View v)
+    {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "timePicker");
+
+    }
+
     public void sendMessage(View v)
     {
-        intent = new Intent(this, PersonalActivity.class);
-        startActivity(intent);
+
+        if( v.getId() == b.getId() )
+        {
+            intent = new Intent(this, PersonalActivity.class);
+            startActivity(intent);
+        }
+        else
+        {
+            //Do nothing.
+        }
+
+    }
+
+
+
+    //DATE PICKER INNER CLASS.
+    public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            // Do something with the date chosen by the user
+            date.setText(month+"/"+day+"/"+year);
+
+        }
+
+
+    }
+
+    //TIME PICKER INNER CLASS.
+    public static class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    false);
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            // Do something with the time chosen by the user
+
+            String ampm;
+
+            if(hourOfDay > 12)
+            {
+                ampm = "pm";
+                hourOfDay -= 12;
+            }
+            else
+            {
+                ampm = "am";
+            }
+
+
+            time.setText(hourOfDay+":"+minute+ampm);
+        }
     }
 }
