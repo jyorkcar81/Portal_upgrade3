@@ -25,6 +25,8 @@
         <item>11/23/18</item>
     </string-array>
 
+    <string name="dateButtonLabel">Date...</string>
+    <string name="timeButtonLabel">Time...</string>
 
     <string name="EnglishLanguage">English</string>
     <string name="SpanishLanguage">Spanish</string>
