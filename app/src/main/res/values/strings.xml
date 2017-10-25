@@ -60,4 +60,9 @@
     <string name="about_menu_item">About Me and App</string>
     <string name="link_menu_item">Link to App</string>
 
+
+    <string name="functionality_label">Functionality:</string>
+    <string name="functionality_description">Memory game.</string>
+
+
 </resources>
