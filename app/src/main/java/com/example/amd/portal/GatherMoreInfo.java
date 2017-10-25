@@ -20,6 +20,9 @@ import android.widget.EditText;
 import android.text.format.DateFormat;
 import android.widget.TimePicker;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -175,6 +178,48 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
             //Do nothing.
         }
 
+    }
+
+
+    //Save to name, email, and address to file.  Time and date?  Append the data, not overwrite.
+    private void saveFile()
+    {
+        String path= "";
+        String filename = "";
+        File f;
+        BufferedWriter writer = null;
+
+        String sName, sAddress, sEmail;
+
+        sName       = name.getText().toString();
+        sAddress    = address.getText().toString();
+        sEmail      = email.getText().toString();
+
+        try
+        {
+            f = new File(path);
+            writer = new BufferedWriter(new FileWriter(f));
+
+
+            writer.write(sName);
+            writer.newLine();
+            writer.write(sAddress);
+            writer.newLine();
+            writer.write(sEmail);
+            writer.newLine();
+
+
+
+
+        }
+        catch(Exception e)
+        {
+
+        }
+        finally
+        {
+            try{if(writer != null)writer.close();}catch(Exception x){}
+        }
     }
 
 
