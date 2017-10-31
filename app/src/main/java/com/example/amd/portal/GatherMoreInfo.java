@@ -84,16 +84,11 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         b = (Button)findViewById(R.id.button4);
 
-        //adapter = ArrayAdapter.createFromResource(this,R.array.memberships,R.layout.support_simple_spinner_dropdown_item);
-
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        //spinner.setAdapter(adapter);
-
         spinner.setOnItemSelectedListener(this);
 
         i = getIntent();
         user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
+
 
     }
 
@@ -141,7 +136,6 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         if( v.getId() == b.getId() )
         {
-
             //Determine chosen language.
             if(rbSpan.isChecked())
             {
@@ -152,7 +146,6 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
                 //Default to English.
                 language = "English";
             }
-
 
             Log.d("member_type",memberType);
 
@@ -246,7 +239,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         try
         {
             outputStreamWriter = new OutputStreamWriter(context.openFileOutput(FILE_NAME, Context.MODE_APPEND));
-            outputStreamWriter.write(data.replaceAll(",",System.lineSeparator()));
+            outputStreamWriter.write(data);
 
             Log.d("write_status","Wrote successfully");
         }
@@ -309,10 +302,14 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     private void showInfo()
     {
         StringBuilder sb = new StringBuilder();
+        String[] temp = readFromFile(this).split(",");
 
-        sb.append("Data Collected:"+System.lineSeparator());
+        sb.append("Data Collected:"+"\r\n");
 
-        sb.append(readFromFile(this));
+        for(int i=0;i<temp.length;i++)
+        {
+            sb.append(temp[i]+"\r\n");
+        }
 
         Toast.makeText(this,sb.toString(),Toast.LENGTH_LONG).show();
     }
