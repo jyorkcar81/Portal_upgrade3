@@ -16,7 +16,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/p" />
+        app:srcCompat="@drawable/p"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textView6"
@@ -48,7 +49,8 @@
         app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="RtlHardcoded">
 
         <TextView
             android:id="@+id/textView1"
@@ -70,7 +72,8 @@
             android:inputType="text"
             android:maxLength="@integer/maxLength"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="212dp" />
+            tools:layout_editor_absoluteY="212dp"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView2"
@@ -88,7 +91,8 @@
             android:inputType="text"
             android:maxLength="@integer/maxLength"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView3"
@@ -110,7 +114,8 @@
             android:inputType="textPassword"
             android:maxLength="@integer/maxLength"
             tools:layout_editor_absoluteX="95dp"
-            tools:layout_editor_absoluteY="130dp" />
+            tools:layout_editor_absoluteY="130dp"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView4"
@@ -127,7 +132,8 @@
             android:inputType="text"
             android:maxLength="@integer/maxLength"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:ignore="LabelFor" />
 
     </GridLayout>
 
