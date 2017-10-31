@@ -75,8 +75,8 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         date     = (EditText) findViewById(R.id.editTextDate);
         time     = (EditText) findViewById(R.id.editTextTime);
 
-        rbEng    = (RadioButton)findViewById(R.id.rbEng);
-        rbSpan   = (RadioButton)findViewById(R.id.rbSpan);
+        rbEng    = (RadioButton)findViewById(R.id.radioButtonEnglish);
+        rbSpan   = (RadioButton)findViewById(R.id.radioButtonSpanish);
         user     = (TextView)findViewById(R.id.user);
         name     = (EditText)findViewById(R.id.editTextName);
         address  = (EditText)findViewById(R.id.editTextAddress);
@@ -97,14 +97,13 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         i = getIntent();
         user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
 
-        openFile("", this);
+  //      openFile("", this);
 
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
     {
-        //date.setText(parent.getItemAtPosition(pos).toString());
         memberType = spinner.getSelectedItem().toString();
     }
 
@@ -125,6 +124,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
         radioGroup.getCheckedRadioButtonId();
+
     }
 
     public void showDatePickerDialog(View v)
@@ -257,7 +257,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         catch (IOException e)
         {
             Log.e("Exception", "File write failed: " + e.toString());
-            System.out.println("FIle Failed to open");
+
         }
         finally
         {
@@ -286,9 +286,10 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
         catch (IOException e)
         {
             Log.e("Exception", "File write failed: " + e.toString());
-            System.out.println("FIle Failed to open");
+
         }
     }
+
     private String readFromFile(Context context)
     {
 
@@ -332,7 +333,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         sb.append(readFromFile(this));
 
-        Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,sb.toString(),Toast.LENGTH_LONG).show();
     }
 
 }

@@ -141,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#000000"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="14sp"
@@ -177,6 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#000000"
             android:ems="10"
             android:inputType="textPostalAddress"
             android:textSize="14sp"
@@ -213,6 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#000000"
             android:ems="10"
             android:inputType="textWebEmailAddress"
             android:textSize="14sp"
@@ -249,6 +252,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#000000"
             android:ems="8"
             android:inputType="textPersonName"
             tools:ignore="LabelFor" />
@@ -258,6 +262,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
             android:onClick="showTimePickerDialog"
             android:text="@string/picker"
             android:textAllCaps="false" />
@@ -297,6 +302,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#000000"
             android:ems="8"
             android:inputType="date"
             tools:ignore="LabelFor" />
@@ -306,6 +312,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
             android:onClick="showDatePickerDialog"
             android:text="@string/picker"
             android:textAllCaps="false" />
@@ -326,6 +333,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@android:color/darker_gray"
             android:onClick="sendMessage"
             android:text="@string/submit"
             android:textAllCaps="false"

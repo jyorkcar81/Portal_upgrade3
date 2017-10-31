@@ -146,6 +146,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_orange_dark"
+        android:backgroundTint="#B8860B"
         android:text="@string/validate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -180,6 +181,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
 
+        android:backgroundTint="#FFFFFF"
         android:onClick="sendMessage"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
