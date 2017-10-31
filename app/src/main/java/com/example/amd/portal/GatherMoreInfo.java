@@ -23,9 +23,7 @@ import android.text.format.DateFormat;
 import android.widget.TimePicker;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -96,8 +94,6 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         i = getIntent();
         user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
-
-  //      openFile("", this);
 
     }
 
@@ -272,21 +268,6 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
             {
 
             }
-        }
-    }
-
-    private void openFile(String data,Context context) {
-
-        try
-        {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE));
-
-            Log.d("read_status","Opened successfully");
-        }
-        catch (IOException e)
-        {
-            Log.e("Exception", "File write failed: " + e.toString());
-
         }
     }
 
