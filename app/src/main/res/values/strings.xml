@@ -46,7 +46,6 @@
     <string name="picker">pick</string>
 
 
-
     <string name="category">Category:</string>
     <string name="game">Game</string>
     <string name="myGitHubLink">https://github.com/jyorkcar81</string>
@@ -57,12 +56,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="about_menu_item">About Me and App</string>
+    <string name="about_menu_item">About Me</string>
     <string name="link_menu_item">Link to App</string>
+    <string name="link_home_menu_item">Link to Home</string>
 
 
     <string name="functionality_label">Functionality:</string>
-    <string name="functionality_description">Memory game.</string>
+    <string name="functionality_description">Memory game.  Match the same images on cards for all the cards shown.</string>
 
 
 </resources>

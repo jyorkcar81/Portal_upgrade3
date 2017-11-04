@@ -21,6 +21,7 @@
             android:label="GatherMoreInfo"
             android:parentActivityName=".GatherMoreInfo" />
         <activity android:name=".PersonalActivity" />
+        <activity android:name=".AboutMeActivity"></activity>
     </application>
 
 </manifest>

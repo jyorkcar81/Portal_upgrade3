@@ -23,6 +23,7 @@ import android.text.format.DateFormat;
 import android.widget.TimePicker;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -153,7 +154,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
             writeToFile(memberType+","+language+","+name.getText().toString()+","+address.getText().toString()+","+email.getText().toString()+","+time.getText().toString()+","+date.getText().toString()+",",this);
 
             showInfo();
-
+            
             intent = new Intent(this, PersonalActivity.class);
             startActivity(intent);
         }
