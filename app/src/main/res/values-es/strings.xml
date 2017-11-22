@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Portal de clase de diseño móvil de SCC CIS</string>
+    <string name="EnglishLanguage">Inglés</string>
+    <string name="SpanishLanguage">Español</string>
+    <string name="about_menu_item">Sobre mi</string>
+    <string name="address">Dirección</string>
+    <string name="bad">Malo</string>
+    <string name="bio">Informática Informática de UC Irvine. Desarrollando aplicaciones por afición.</string>
+    <string name="category">Categoría:</string>
+    <string name="correct_username_password">Buen usuario y contraseña.</string>
+    <string name="date">Fecha</string>
+    <string name="dateButtonLabel">Fecha...</string>
+    <string name="dateChosen">Usted seleccionó:</string>
+    <string name="email">Email</string>
+    <string name="functionality_description">Juego de memoria. Haga coincidir las mismas imágenes en las tarjetas para todas las tarjetas que se muestran.</string>
+    <string name="functionality_label">Funcionalidad</string>
+    <string name="game">Juego</string>
+    <string name="good">Bueno</string>
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="incorrect_username_password">MALO usuario y contraseña.</string>
+    <string name="link_home_menu_item">Enlace a casa</string>
+    <string name="link_menu_item">Enlace a la aplicación</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="membership">¿Miembro de Sac City?</string>
+    <string name="myGitHub">GitHub:</string>
+    <string name="myGitHubLink">https://github.com/jyorkcar81</string>
+    <string name="name">Nombre</string>
+    <string name="ok">¿válido?</string>
+    <string name="password">Contraseña</string>
+    <string name="picker">recoger</string>
+    <string name="reset">Reiniciar</string>
+    <string name="submit">Enviar</string>
+    <string name="time">Hora</string>
+    <string name="timeButtonLabel">Hora...</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="validate">validar</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="welcome_message">Bienvenido a CISP 362</string>
+    <string name="sendMailButtonLabel">Enviar correo electrónico</string>
+    <string name="viewMailButtonLabel">Ver eMail</string>
+</resources>

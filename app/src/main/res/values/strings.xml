@@ -27,6 +27,8 @@
 
     <string name="dateButtonLabel">Date...</string>
     <string name="timeButtonLabel">Time...</string>
+    <string name="sendMailButtonLabel">Send eMail</string>
+    <string name="viewMailButtonLabel">View eMail</string>
 
     <string name="EnglishLanguage">English</string>
     <string name="SpanishLanguage">Spanish</string>

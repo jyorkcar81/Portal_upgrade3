@@ -1,8 +1,11 @@
 package com.example.amd.portal;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +33,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Calendar;
+import java.util.Locale;
 
 
 /**
@@ -59,7 +63,11 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     private RadioButton rbEng,
                         rbSpan;
 
-    private Button b;
+    private RadioGroup rg;
+
+    private Button  b,
+                    b2,
+                    b3;
 
     private Intent intent;
 
@@ -83,14 +91,18 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         spinner = (Spinner)findViewById(R.id.spinner);
 
-        b = (Button)findViewById(R.id.button4);
+        b   = (Button)findViewById(R.id.button4);
+        b2  = (Button)findViewById(R.id.button6);
+        b3  = (Button)findViewById(R.id.button5);
+
+        rg = (RadioGroup)findViewById(R.id.radioGroup2);
 
         spinner.setOnItemSelectedListener(this);
 
         i = getIntent();
         user.setText(i.getStringExtra(MainActivity.PACKAGE_NAME));
 
-
+        rg.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -115,7 +127,22 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-        radioGroup.getCheckedRadioButtonId();
+        int id = radioGroup.getCheckedRadioButtonId();
+
+        if(rbSpan.isChecked())
+        {
+            language = "Spanish";
+            Toast.makeText(this,language,Toast.LENGTH_SHORT).show();
+            //setLocale("es");
+        }
+        else
+        {
+            //Default to English.
+            language = "English";
+            Toast.makeText(this,language,Toast.LENGTH_SHORT).show();
+            //setLocale("en");
+        }
+
 
     }
 
@@ -134,18 +161,19 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
     public void sendMessage(View v)
     {
-
         if( v.getId() == b.getId() )
         {
             //Determine chosen language.
             if(rbSpan.isChecked())
             {
                 language = "Spanish";
+
             }
             else
             {
                 //Default to English.
                 language = "English";
+
             }
 
             Log.d("member_type",memberType);
@@ -158,6 +186,49 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
             intent = new Intent(this, PersonalActivity.class);
             startActivity(intent);
         }
+        else if(v.getId() == b2.getId())//Send button.
+        {
+            //Perform minor email address validation.
+            if(email.getText().length() <= 0)
+            {
+                return;
+            }
+
+            //Send email information to visitors.
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse("mailto:"));
+            //String [] to = {"abmukarram@gmail.com"};
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, email.getText());
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT," Sent from my app!");
+            emailIntent.putExtra(Intent.EXTRA_TEXT," Next Meeting Next Month!");
+            emailIntent.setType("message/rfc822");
+
+            try
+            {
+                startActivity(emailIntent);
+                Toast.makeText(this,email.getText(),Toast.LENGTH_LONG).show();
+            }
+            catch (ActivityNotFoundException e)
+            {
+
+            }
+
+        }
+        else if(v.getId() == b3.getId()) //View button.
+        {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://google.com"));
+
+            try
+            {
+                startActivity(intent);
+            }
+            catch (ActivityNotFoundException e)
+            {
+
+            }
+        }
         else
         {
             //Do nothing.
@@ -165,7 +236,33 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
     }
 
-    //DATE PICKER INNER CLASS.
+
+
+    private void setLocale(String language)
+    {
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Resources res = this.getResources();
+        Configuration config = new Configuration(res.getConfiguration());
+
+        if (Build.VERSION.SDK_INT >= 17)
+        {
+            config.setLocale(locale);
+            createConfigurationContext(config);
+            recreate();
+        }
+        else
+        {
+            config.locale = locale;
+            config.setLayoutDirection(locale);
+            res.updateConfiguration(config, res.getDisplayMetrics());
+
+        }
+
+    }
+
+
+        //DATE PICKER INNER CLASS.
     public static class DatePickerFragment extends DialogFragment
             implements DatePickerDialog.OnDateSetListener {
 
