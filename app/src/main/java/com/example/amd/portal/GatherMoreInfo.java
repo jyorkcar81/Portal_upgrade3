@@ -182,7 +182,7 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
             writeToFile(memberType+","+language+","+name.getText().toString()+","+address.getText().toString()+","+email.getText().toString()+","+time.getText().toString()+","+date.getText().toString()+",",this);
 
             showInfo();
-            
+
             intent = new Intent(this, PersonalActivity.class);
             startActivity(intent);
         }
@@ -336,15 +336,14 @@ public class GatherMoreInfo extends AppCompatActivity implements AdapterView.OnI
 
         try
         {
-            outputStreamWriter = new OutputStreamWriter(context.openFileOutput(FILE_NAME, Context.MODE_APPEND));
-            outputStreamWriter.write(data);
+           outputStreamWriter = new OutputStreamWriter(context.openFileOutput(FILE_NAME, Context.MODE_APPEND));
+           outputStreamWriter.write(data);
 
             Log.d("write_status","Wrote successfully");
         }
         catch (IOException e)
         {
             Log.e("Exception", "File write failed: " + e.toString());
-
         }
         finally
         {
